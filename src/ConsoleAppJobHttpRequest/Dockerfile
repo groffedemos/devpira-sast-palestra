@@ -12,7 +12,7 @@ RUN dotnet publish -c Release -o out
 
 # Build da imagem
 # TODO: Alterar para mcr.microsoft.com/dotnet/runtime:9.0.11
-FROM mcr.microsoft.com/dotnet/runtime:9.0.8
+FROM mcr.microsoft.com/dotnet/runtime:latest
 WORKDIR /app
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "ConsoleAppJobHttpRequest.dll"]
