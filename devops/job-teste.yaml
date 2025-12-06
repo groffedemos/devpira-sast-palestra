@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: exemplo-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: exemplo
+        image: workshop/job-httprequest:#{GITHUB_RUN_NUMBER}#
+        env:
+        - name: EndpointNotificacao
+          value: "https://baconipsum.com/api/?type=all-meat"
+        # Descomentar as linhas abaixo para adicionar recursos e segurança (evitando erros/alertas no pipeline)
+        # resources:
+        #   requests:
+        #     memory: "64Mi"
+        #     cpu: "50m"
+        #   limits:
+        #     memory: "128Mi"
+        #     cpu: "100m"
+        # securityContext:
+        #   allowPrivilegeEscalation: false
+      restartPolicy: Never
