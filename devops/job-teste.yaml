@@ -11,7 +11,7 @@ spec:
         env:
         - name: EndpointNotificacao
           value: "https://baconipsum.com/api/?type=all-meat"
-        # Descomentar as linhas abaixo para adicionar recursos e segurança (evitando erros/alertas no pipeline)
+        # TODO: Descomentar as linhas abaixo para adicionar recursos e segurança (evitando erros/alertas no pipeline)
         # resources:
         #   requests:
         #     memory: "64Mi"

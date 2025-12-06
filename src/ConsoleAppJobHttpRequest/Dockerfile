@@ -1,4 +1,4 @@
-# Alterar para mcr.microsoft.com/dotnet/sdk:9.0.308
+# TODO: Alterar para mcr.microsoft.com/dotnet/sdk:9.0.308
 FROM mcr.microsoft.com/dotnet/sdk:latest AS build-env
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . ./
 RUN dotnet publish -c Release -o out
 
 # Build da imagem
-# Alterar para mcr.microsoft.com/dotnet/runtime:9.0.11
+# TODO: Alterar para mcr.microsoft.com/dotnet/runtime:9.0.11
 FROM mcr.microsoft.com/dotnet/runtime:9.0.8
 WORKDIR /app
 COPY --from=build-env /app/out .
